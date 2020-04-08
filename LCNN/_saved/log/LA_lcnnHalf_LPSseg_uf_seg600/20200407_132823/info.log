@@ -1,0 +1,68 @@
+2020-04-07 13:28:23,071 - train - INFO - LCNN(
+  (layer1): Sequential(
+    (0): mfm(
+      (filter): Conv2d(1, 16, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    )
+    (1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer2): Sequential(
+    (0): group(
+      (conv_a): mfm(
+        (filter): Conv2d(8, 16, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(8, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (2): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (layer3): Sequential(
+    (0): group(
+      (conv_a): mfm(
+        (filter): Conv2d(12, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(12, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer4): Sequential(
+    (0): group(
+      (conv_a): mfm(
+        (filter): Conv2d(12, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(12, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): group(
+      (conv_a): mfm(
+        (filter): Conv2d(4, 8, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(4, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc1): Sequential(
+    (0): mfm(
+      (filter): Sequential(
+        (0): Linear(in_features=7844, out_features=64, bias=True)
+        (1): Dropout(p=0.75, inplace=False)
+      )
+    )
+    (1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (fc2): AngleLinear()
+)
+Trainable parameters: 509072
+2020-04-07 13:28:23,075 - trainer - WARNING - Warning: There's no GPU available on this machine,training will be performed on CPU.
+2020-04-07 13:28:23,075 - trainer - WARNING - Warning: TensorboardX visualization is configured to use, but currently not installed on this machine. Please install the package by 'pip install tensorboardx' command or turn off the option in the 'config.json' file.

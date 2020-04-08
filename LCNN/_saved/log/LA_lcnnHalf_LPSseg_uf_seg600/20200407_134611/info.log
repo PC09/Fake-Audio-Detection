@@ -1,0 +1,131 @@
+2020-04-07 13:46:11,441 - train - INFO - LCNN(
+  (layer1): Sequential(
+    (0): mfm(
+      (filter): Conv2d(1, 16, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    )
+    (1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer2): Sequential(
+    (0): group(
+      (conv_a): mfm(
+        (filter): Conv2d(8, 16, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(8, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (2): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (layer3): Sequential(
+    (0): group(
+      (conv_a): mfm(
+        (filter): Conv2d(12, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(12, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer4): Sequential(
+    (0): group(
+      (conv_a): mfm(
+        (filter): Conv2d(12, 24, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(12, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): group(
+      (conv_a): mfm(
+        (filter): Conv2d(4, 8, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (bn): BatchNorm2d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv): mfm(
+        (filter): Conv2d(4, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc1): Sequential(
+    (0): mfm(
+      (filter): Sequential(
+        (0): Linear(in_features=7844, out_features=64, bias=True)
+        (1): Dropout(p=0.75, inplace=False)
+      )
+    )
+    (1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (fc2): AngleLinear()
+)
+Trainable parameters: 509072
+2020-04-07 13:46:11,444 - trainer - WARNING - Warning: There's no GPU available on this machine,training will be performed on CPU.
+2020-04-07 13:46:11,445 - trainer - WARNING - Warning: TensorboardX visualization is configured to use, but currently not installed on this machine. Please install the package by 'pip install tensorboardx' command or turn off the option in the 'config.json' file.
+2020-04-07 13:46:20,446 - trainer - INFO -     epoch          : 1
+2020-04-07 13:46:20,531 - trainer - INFO -     loss           : 0.6031128764152527
+2020-04-07 13:46:20,532 - trainer - INFO -     accuracy       : 0.6
+2020-04-07 13:46:20,532 - trainer - INFO -     val_loss       : 34.5211296081543
+2020-04-07 13:46:20,532 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:46:20,600 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch1.pth ...
+2020-04-07 13:46:20,608 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:46:46,227 - trainer - INFO -     epoch          : 2
+2020-04-07 13:46:46,276 - trainer - INFO -     loss           : 0.8263686299324036
+2020-04-07 13:46:46,277 - trainer - INFO -     accuracy       : 0.5
+2020-04-07 13:46:46,277 - trainer - INFO -     val_loss       : 11.726890563964844
+2020-04-07 13:46:46,277 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:46:46,473 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch2.pth ...
+2020-04-07 13:46:46,546 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:46:53,465 - trainer - INFO -     epoch          : 3
+2020-04-07 13:46:53,538 - trainer - INFO -     loss           : 0.7194107174873352
+2020-04-07 13:46:53,538 - trainer - INFO -     accuracy       : 0.6
+2020-04-07 13:46:53,538 - trainer - INFO -     val_loss       : 18.30312156677246
+2020-04-07 13:46:53,538 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:46:53,546 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch3.pth ...
+2020-04-07 13:46:53,560 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:46:57,958 - trainer - INFO -     epoch          : 4
+2020-04-07 13:46:57,958 - trainer - INFO -     loss           : 0.6915262341499329
+2020-04-07 13:46:57,958 - trainer - INFO -     accuracy       : 0.7
+2020-04-07 13:46:57,958 - trainer - INFO -     val_loss       : 7.682523250579834
+2020-04-07 13:46:57,958 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:46:57,978 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch4.pth ...
+2020-04-07 13:46:57,988 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:47:02,099 - trainer - INFO -     epoch          : 5
+2020-04-07 13:47:02,099 - trainer - INFO -     loss           : 1.09589421749115
+2020-04-07 13:47:02,100 - trainer - INFO -     accuracy       : 0.3
+2020-04-07 13:47:02,100 - trainer - INFO -     val_loss       : 5.981192588806152
+2020-04-07 13:47:02,100 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:47:02,127 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch5.pth ...
+2020-04-07 13:47:02,151 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:47:06,264 - trainer - INFO -     epoch          : 6
+2020-04-07 13:47:06,264 - trainer - INFO -     loss           : 0.6703728437423706
+2020-04-07 13:47:06,264 - trainer - INFO -     accuracy       : 0.7
+2020-04-07 13:47:06,264 - trainer - INFO -     val_loss       : 4.380814552307129
+2020-04-07 13:47:06,264 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:47:06,357 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch6.pth ...
+2020-04-07 13:47:06,366 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:47:10,652 - trainer - INFO -     epoch          : 7
+2020-04-07 13:47:10,653 - trainer - INFO -     loss           : 0.5909945368766785
+2020-04-07 13:47:10,653 - trainer - INFO -     accuracy       : 0.7
+2020-04-07 13:47:10,653 - trainer - INFO -     val_loss       : 2.633646249771118
+2020-04-07 13:47:10,653 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:47:10,663 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch7.pth ...
+2020-04-07 13:47:10,678 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:47:14,834 - trainer - INFO -     epoch          : 8
+2020-04-07 13:47:14,837 - trainer - INFO -     loss           : 0.8330585360527039
+2020-04-07 13:47:14,838 - trainer - INFO -     accuracy       : 0.6
+2020-04-07 13:47:14,838 - trainer - INFO -     val_loss       : 1.879417061805725
+2020-04-07 13:47:14,838 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:47:14,856 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch8.pth ...
+2020-04-07 13:47:14,896 - trainer - INFO - Saving current best: model_best.pth ...
+2020-04-07 13:47:19,367 - trainer - INFO -     epoch          : 9
+2020-04-07 13:47:19,368 - trainer - INFO -     loss           : 0.3698063790798187
+2020-04-07 13:47:19,368 - trainer - INFO -     accuracy       : 0.9
+2020-04-07 13:47:19,368 - trainer - INFO -     val_loss       : 1.1571357250213623
+2020-04-07 13:47:19,368 - trainer - INFO -     val_accuracy   : 0.6
+2020-04-07 13:47:19,383 - trainer - INFO - Saving checkpoint: _saved/models/LA_lcnnHalf_LPSseg_uf_seg600/20200407_134611/checkpoint-epoch9.pth ...
+2020-04-07 13:47:19,393 - trainer - INFO - Saving current best: model_best.pth ...
